@@ -27,7 +27,7 @@ let app = new Vue({
     el: '#container',
     data: {
         questions: [{ key: 1, content: 'Gato' }, { key: 2, content: 'Delfín' }, { key: 3, content: 'Elefante' }],
-        answers: [{ key: 4, content: 'Dolphin' }, { key: 4, content: 'Elephant' }, { key: 5, content: 'Cat' }],
+        answers: [{ key: 4, content: 'Dolphin' }, { key: 5, content: 'Elephant' }, { key: 6,content: 'Cat' }],
         matched: [],
         firstClicked: null,
         secondClicked: null
