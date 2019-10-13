@@ -1,0 +1,18 @@
+#container{
+    display: flex;
+    height: 100vh;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.column:first-of-type{
+    margin-right: 30vw;
+    color: red;
+}
+
+.column-element{
+    flex-basis: 50vh;
+}
