@@ -26,8 +26,9 @@ Vue.component('column', {
 let app = new Vue({
     el: '#container',
     data: {
+        //Le asignamos la misma llave a la respuesta correcta
         questions: [{ key: 1, content: 'Gato' }, { key: 2, content: 'Delfín' }, { key: 3, content: 'Elefante' }],
-        answers: [{ key: 4, content: 'Dolphin' }, { key: 5, content: 'Elephant' }, { key: 6,content: 'Cat' }],
+        answers: [{ key: 2, content: 'Dolphin' }, { key: 3, content: 'Elephant' }, { key: 1, content: 'Cat' }],
         matched: [],
         firstClicked: null,
         secondClicked: null
@@ -37,18 +38,27 @@ let app = new Vue({
     }
 })
 
-let cosasPresionadas = []
-// Querán redefinir esto desde 0, para que no se pierdan.
+
+let columnsClicked = []
 function clickedEvent(e) {
-    cosasPresionadas.push({ elem: e[0], id: e[1] })
-    if (cosasPresionadas.length < 3) {
-        cosasPresionadas.map(column => {
-            return column.elem.style.backgroundColor = "blue"
-        })
+    columnsClicked.push({ elem: e[0], id: e[1] })
+    elem1 = columnsClicked[0]
+    elem2 = columnsClicked[1]
+    if (columnsClicked.length < 3) {
+        elem1.elem.style.backgroundColor = "forestgreen"
+        if(columnsClicked.length === 2){
+            if(elem1.id === elem2.id){
+                elem2.elem.style.backgroundColor = "forestgreen"
+            }
+            else{
+                elem2.elem.style.backgroundColor = "red"
+            }
+        }           
     } else {
-        cosasPresionadas.map(column => {
+        columnsClicked.map(column => {
             return column.elem.style.backgroundColor = "white"
         })
-        cosasPresionadas.length = 0
+        columnsClicked = []
     }
+    
 }

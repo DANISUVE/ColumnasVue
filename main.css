@@ -1,18 +1,27 @@
 #container{
+  width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    height: 100vh;
+    height: 300px;
 }
 
 .column{
     display: flex;
     flex-direction: column;
+
 }
 
 .column:first-of-type{
     margin-right: 30vw;
-    color: red;
+    color: cornflowerblue;
 }
 
-.column-element{
+/* .column-element{
     flex-basis: 50vh;
+    outline: 2px solid black;
+} */
+.column-element{
+    flex-basis: 20vh;
+    outline: 1.5px solid black;
 }
